@@ -1,0 +1,17 @@
+clears and invalidate active user's session.
+---
+description: |
+  Clears and invalidate active user's session.
+
+tags:
+  - auth
+
+security:
+  - Auth: []
+
+responses:
+  200:
+    description: Logout success.
+
+  400:
+    description: Invalid or Missing token.

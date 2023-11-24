@@ -1,0 +1,28 @@
+generates and send a reset token to User's email
+---
+description: |
+  Generates and send a reset token to User's email
+
+tags:
+  - auth
+
+parameters:
+  - name: user data
+    in: body
+    required: true
+    schema:
+      type: object
+      properties:
+        email:
+          type: string
+          example: 'johndoe@example.com'
+
+responses:
+  200:
+    description: Request is being processed.
+
+  400:
+    description: Bad Request, no or bad parameters in request.
+
+  404:
+    description: User not found.
