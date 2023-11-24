@@ -1,0 +1,36 @@
+validates token and updates User Password
+---
+description: |
+  Validates token and updates User Password
+
+tags:
+  - auth
+
+parameters:
+  - name: encoded_token
+    in: path
+    description: encoded token
+    required: true
+    schema:
+      type: string
+  - name: new password
+    in: body
+    required: true
+    schema:
+      type: object
+      properties:
+        password:
+          type: string
+
+responses:
+  200:
+    description: Password change success.
+
+  400:
+    description: Bad Request, no or bad parameters in request.
+
+  401:
+    description: Invalid or expired token.
+
+  404:
+    description: User not found.

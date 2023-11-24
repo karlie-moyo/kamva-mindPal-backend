@@ -1,0 +1,25 @@
+returns the current authorized User.
+---
+description: |
+  Returns the current authorized User.
+
+tags:
+  - users
+
+security:
+  - Auth: []
+
+parameters:
+  - name: detailed
+    in: query
+    description: Include detailed user information (true or false)
+    required: false
+    schema:
+      type: boolean
+
+responses:
+  200:
+    description: User retrieved successfully
+
+  401:
+    description: Unauthorized, log-in required or active user didn't have appropriate priviledges.
